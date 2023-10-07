@@ -14,7 +14,7 @@ export default function App() {
         {""}
         and is{" "}
         <a href="https://github.com/mike-charity/reactweather" target="_blank">
-          open-sourced on Github{" "}
+          open-sourced on Github
         </a>
       </footer>
     </div>
