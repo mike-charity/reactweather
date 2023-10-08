@@ -10,19 +10,19 @@ export default function App() {
 
         <Weather />
         <footer>
-          This project was coded by
+          This project was coded by {""}
           <a href="https://www.shecodes.io/" target="_blank" rel="noreferrer">
             charity and is
           </a>
-          <p>
-            <a
-              href="https://github.com/mike-charity/reactweather"
-              target="_blank"
-              rel="noreferrer"
-            >
-              open-sourced on Github
-            </a>
-          </p>
+          {""}
+          and is {""}
+          <a
+            href="https://github.com/mike-charity/reactweather"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-sourced on Github
+          </a>
         </footer>
       </div>
     </div>
