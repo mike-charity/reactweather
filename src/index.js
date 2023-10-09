@@ -8,21 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
-    <footer>
-      This project was coded by {""}
-      <a href="https://www.shecodes.io/" target="_blank" rel="noreferrer">
-        charity and is
-      </a>
-      {""}
-      and is {""}
-      <a
-        href="https://github.com/mike-charity/reactweather.git"
-        target="_blank"
-        rel="noreferrer"
-      >
-        open-sourced on Github
-      </a>
-    </footer>
+    
   </React.StrictMode>
 );
 
