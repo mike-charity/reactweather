@@ -8,10 +8,10 @@ export default function App() {
       <div className="container">
         <h1>Weather App</h1>
 
-        <Weather />
+        <Weather  defaultcity="Guelph"/>
         <footer>
           This project was coded by {""}
-          <a href="https://www.shecodes.io/" target="_blank" rel="noreferrer">
+          <a href="https://www.shecodes.io/" target="_blank" >
             charity and is
           </a>
           {""}
@@ -19,7 +19,7 @@ export default function App() {
           <a
             href="https://github.com/mike-charity/reactweather.git"
             target="_blank"
-            rel="noreferrer"
+           
           >
             open-sourced on Github
           </a>
