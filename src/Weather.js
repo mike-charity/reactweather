@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./weather.css";
+import axios from "axios";
 export default function Weather() {
+  const apiKey = "938614f3c740dad73641e1620d175792";
+  let city="Guelph";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}`;
   return (
     <div className="Weather">
       <form>
@@ -35,12 +39,11 @@ export default function Weather() {
               alt="Mostly Cloudy"
               className="float-left"
             />
-        
 
-          <strong className="temperature">9</strong>
-          <span className="unit">°C</span>
+            <strong className="temperature">9</strong>
+            <span className="unit">°C</span>
+          </div>
         </div>
- </div>
         <div className="col-6">
           <ul>
             <li>Precipitation :10%</li>
