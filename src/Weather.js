@@ -1,43 +1,39 @@
 import React, { useState } from "react";
-
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
-import WeatherInfo from ". /WeatherInfo";
 
-export default function WeatherData(props) {
- 
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
- const[city,setCity] = useState(props.defaultCity);
+  const [city, setCity] = useState(props.defaultCity);
+  
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
-      wind: response.data.wind.speed,
-      humidity: response.data.main.humidity,
       pressure: response.data.main.pressure,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+      iconUrl: "https://openweathermap.org/img/wn/10d@2x.png",
       city: response.data.name,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
     });
   }
   function search() {
-    const apiKey = "938614f3c740dad73641e1620d175792";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
-
-
+    let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+    let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
-  function handleCityChange(event){setCity(event.target.value);
-
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
 
-  if (weatherData.ready) {
+  if ( weatherData.ready ) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
@@ -65,6 +61,7 @@ export default function WeatherData(props) {
     );
   } else {
     search();
+
     return "Loading....";
   }
 }
