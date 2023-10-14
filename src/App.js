@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-
 import "./App.css";
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
           >
             open-sourced on Github
           </a>
-        
         </footer>
       </div>
     </div>

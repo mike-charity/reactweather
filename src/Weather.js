@@ -6,7 +6,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -14,15 +14,15 @@ export default function Weather(props) {
       pressure: response.data.main.pressure,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: "https://openweathermap.org/img/wn/10d@2x.png",
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       city: response.data.name,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
     });
   }
   function search() {
-    let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
-    let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiKey = "7746bdeabca928cfedcad71e52fd9d66";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleSubmit(event) {
@@ -33,7 +33,7 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  if ( weatherData.ready ) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
