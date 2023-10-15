@@ -23,7 +23,7 @@
 .Weather li {
   font-size: 16px;
   font-weight: 100;
-line-height: 19px;
+  line-height: 19px;
   list-style: none;
 }
 .Weather .temperature {
@@ -32,9 +32,11 @@ line-height: 19px;
   font-size: 54px;
   line-height: 10px;
   font-weight: 400;
+  position: relative;
 }
 .Weather canvas {
   margin-right: 10px;
+  margin-top: 5px;
   display: inline-block;
 }
 .Weather .unit {
@@ -42,5 +44,5 @@ line-height: 19px;
   font-weight: 300;
   position: relative;
   top: -34px;
-  line-height: 1;
+  line-height: 5;
 }
